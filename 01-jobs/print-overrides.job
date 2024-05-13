@@ -1,0 +1,37 @@
+# ipptool -tv -f document.pdf ipp://192.168.110.21/ipp/print print-overrides.job
+
+{
+    VERSION 2.0
+    OPERATION Print-Job
+
+    GROUP Operation-Attributes-Tag
+    ATTR charset "attributes-charset" "utf-8"
+    ATTR naturalLanguage "attributes-natural-language" en
+    ATTR uri "printer-uri" "$uri"
+    ATTR name "requesting-user-name" "Test Print"
+    ATTR mimeMediaType "document-format" "$filetype"
+
+    GROUP Job-Attributes-Tag
+    ATTR keyword sides "two-sided-long-edge"
+    ATTR keyword "print-color-mode" monochrome
+    ATTR enum finishings 4
+    ATTR collection overrides {
+        MEMBER rangeOfInteger document-numbers 1-1
+        MEMBER rangeOfInteger pages 1-2
+        MEMBER keyword sides one-sided
+        MEMBER enum finishings 3
+        MEMBER keyword print-color-mode color
+    }
+
+    FILE "$filename"
+
+    STATUS successful-ok
+    STATUS successful-ok-ignored-or-substituted-attributes
+    STATUS successful-ok-conflicting-attributes
+
+    DISPLAY job-state
+    DISPLAY job-state-reasons
+    DISPLAY printer-state
+    # EXPECT job-id
+    # EXPECT job-uri
+}
