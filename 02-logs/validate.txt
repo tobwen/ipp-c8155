@@ -1,0 +1,16 @@
+"validate.job":
+    Validate-Job:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://192.168.110.21/ipp/print
+        requesting-user-name (nameWithoutLanguage) = Test Print
+        document-format (mimeMediaType) = application/pdf
+        sides (keyword) = two-sided-long-edge
+        print-color-mode (keyword) = monochrome
+        finishings (enum) = staple
+    validate                                                             [PASS]
+        RECEIVED: 105 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        urf-resolution-preferred (integer) = 600

@@ -1,0 +1,18 @@
+"print-overrides-nofinishings.job":
+    Print-Job:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://192.168.110.21/ipp/print
+        requesting-user-name (nameWithoutLanguage) = Test Print
+        document-format (mimeMediaType) = application/pdf
+        sides (keyword) = two-sided-long-edge
+        print-color-mode (keyword) = monochrome
+        overrides (collection) = {document-numbers=1-1 pages=1-2 sides=one-sided print-color-mode=color}
+    print-overrides-nofinishings                                         [FAIL]
+        RECEIVED: 72 bytes in response
+        status-code = client-error-bad-request (client-error-bad-request)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        EXPECTED: STATUS successful-ok (got client-error-bad-request)
+        EXPECTED: STATUS successful-ok-ignored-or-substituted-attributes (got client-error-bad-request)
+        EXPECTED: STATUS successful-ok-conflicting-attributes (got client-error-bad-request)

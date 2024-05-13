@@ -1,0 +1,21 @@
+"print.job":
+    Print-Job:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://192.168.110.21/ipp/print
+        requesting-user-name (nameWithoutLanguage) = Test Print
+        document-format (mimeMediaType) = application/pdf
+        sides (keyword) = two-sided-long-edge
+        print-color-mode (keyword) = monochrome
+        finishings (enum) = staple
+    print                                                                [PASS]
+        RECEIVED: 247 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        job-uri (uri) = ipp://192.168.110.21/841
+        job-id (integer) = 841
+        job-state (enum) = pending
+        job-state-reasons (keyword) = job-incoming
+        job-state-message (textWithoutLanguage) = Receiving Job.
+        number-of-intervening-jobs (integer) = 3
